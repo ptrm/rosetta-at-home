@@ -16,6 +16,7 @@ services:
     privileged: true
     ports:
       - 80:80
+    mem_reservation: 16m
   power-management:
     build: ./power-management
     restart: on-failure
