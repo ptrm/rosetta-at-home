@@ -16,9 +16,9 @@ kill_webui () {
 start_webui
 
 while true; do
-    sleep 30s
+    sleep 120s
 
-    curl -sf -o /dev/null http://localhost:$gotty_port
+    curl --max-time 10 -sf -o /dev/null http://localhost:$gotty_port
 
     if [[ $? -ne 0 ]]; then
       ps -p $gotty_pid && {
