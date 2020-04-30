@@ -10,7 +10,7 @@ start_webui () {
 }
 
 kill_webui () {
-  [ -z "$gotty_pid" ] && kill -9 $gotty_pid
+  [ -n "$gotty_pid" ] && kill -9 $gotty_pid
 }
 
 while true; do
