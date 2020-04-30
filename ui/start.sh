@@ -13,6 +13,8 @@ kill_webui () {
   [ -n "$gotty_pid" ] && kill -9 $gotty_pid
 }
 
+start_webui
+
 while true; do
     sleep 30s
 
