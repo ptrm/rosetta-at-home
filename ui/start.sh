@@ -10,7 +10,7 @@ start_tty2() {
     boinctui 2> /dev/null > /dev/tty2
 }
 
-start_tty2 &
+[ -z "$SKIP_BOINCTUI_TTY" ] && start_tty2 &
 
 # start gotty with boinctui
 exec /usr/app/gotty -w -p 80 boinctui
