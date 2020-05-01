@@ -5,6 +5,9 @@ services:
   boinc-client:
     build: ./boinc-client
     restart: always
+    # cpu share weight when cpu is busy
+    # 1024 is default for each process
+    cpu_shares: 512
     ports:
       - 31416:31416
     volumes:
