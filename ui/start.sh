@@ -3,6 +3,7 @@
 export NCURSES_NO_UTF8_ACS=1
 
 start_tty2() {
+    sleep 12s
     #switch to tty2, clear screen and display boinctui
     chvt 2
     printf "\033c" > /dev/tty2
