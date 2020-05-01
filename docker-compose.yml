@@ -7,7 +7,10 @@ services:
     restart: always
     # cpu share weight when cpu is busy
     # 1024 is default for each process
-    cpu_shares: 512
+    cpu_shares: 256
+    blkio_config:
+      # weight 10-1000, default 500
+      weight: 128
     ports:
       - 31416:31416
     volumes:
