@@ -1,4 +1,4 @@
-version: '2'
+version: '2.1'
 volumes:
   boinc:
 services:
@@ -17,6 +17,13 @@ services:
     privileged: true
     ports:
       - 80:80
+    mem_reservation: 16m
+    healthcheck:
+      test: curl -sf -o /dev/null http://127.0.0.1 || exit 1
+      interval: 1m
+      timeout: 10s
+      retries: 1
+
   power-management:
     build: ./power-management
     restart: on-failure
